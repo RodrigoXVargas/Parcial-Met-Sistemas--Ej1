@@ -19,8 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Poligono extends FiguraBasica {
 
-    @OneToMany(mappedBy = "poligono",
-            cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Lado> lados;
 
 }

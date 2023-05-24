@@ -19,9 +19,6 @@ import java.util.List;
 @AllArgsConstructor
 public class Figura extends Base{
 
-    @OneToMany(mappedBy = "figura",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    private List<FiguraBasica> figurasBasicas;
+
 
 }

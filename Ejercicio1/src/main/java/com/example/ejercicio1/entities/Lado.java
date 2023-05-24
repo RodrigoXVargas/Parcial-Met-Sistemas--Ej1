@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "lados")
 @NoArgsConstructor
@@ -14,8 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Lado extends Base{
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "poligono_fk")
-    private Poligono poligono;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Punto> puntos;
 
 }
