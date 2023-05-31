@@ -17,13 +17,12 @@ import java.util.List;
 @AllArgsConstructor
 public class Continente extends Base{
 
-    @Column
-    private String Nombre;
+
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Continente> continenteslimitrofes = new ArrayList<>();
 
-    public Continente(String nombre) {
-        Nombre = nombre;
+    public Continente(String name) {
+        super(name);
     }
 }

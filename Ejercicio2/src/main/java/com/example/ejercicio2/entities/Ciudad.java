@@ -14,8 +14,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Ciudad extends Base {
 
-    @Column
-    private String Nombre;
+
 
     @Column
     private boolean esCapital;
@@ -23,4 +22,10 @@ public class Ciudad extends Base {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "provincia_fk")
     private Provincia provincia;
+
+    public Ciudad(String name, boolean esCapital, Provincia provincia) {
+        super(name);
+        this.esCapital = esCapital;
+        this.provincia = provincia;
+    }
 }

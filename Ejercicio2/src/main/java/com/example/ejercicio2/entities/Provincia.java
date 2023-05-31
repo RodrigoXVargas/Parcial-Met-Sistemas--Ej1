@@ -17,8 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Provincia extends Base {
 
-    @Column
-    private String Nombre;
+
 
     @Column
     private boolean esCapital;
@@ -35,7 +34,7 @@ public class Provincia extends Base {
 
 
     public Provincia(String nombre, boolean esCapital, Pais pais) {
-        Nombre = nombre;
+        super(nombre);
         this.esCapital = esCapital;
         this.pais = pais;
     }

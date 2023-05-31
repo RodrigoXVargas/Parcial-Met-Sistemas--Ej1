@@ -17,8 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Pais extends Base{
 
-    @Column
-    private String Nombre;
+
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "continente_fk")
@@ -30,8 +29,8 @@ public class Pais extends Base{
     @OneToMany(cascade = CascadeType.ALL)
     private List<Pais> paiseslimitrofes = new ArrayList<>();
 
-    public Pais(String nombre, Continente continente) {
-        Nombre = nombre;
+    public Pais(String name, Continente continente) {
+        super(name);
         this.continente = continente;
     }
 }
