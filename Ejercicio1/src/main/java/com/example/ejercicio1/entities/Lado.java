@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,6 +18,11 @@ import java.util.List;
 public class Lado extends Base{
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Punto> puntos;
+    private List<Punto> puntos = new ArrayList<>();
 
+    public Lado(String name, Punto punto1, Punto punto2) {
+        super(name);
+        puntos.add(punto1);
+        puntos.add(punto2);
+    }
 }

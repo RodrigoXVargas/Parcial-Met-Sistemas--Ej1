@@ -1,14 +1,12 @@
 package com.example.ejercicio1.entities;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,5 +18,11 @@ import java.util.List;
 public class Figura extends Base{
 
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FiguraBasica> figurasBasicas = new ArrayList<>();
 
+
+    public Figura(String name) {
+        super(name);
+    }
 }

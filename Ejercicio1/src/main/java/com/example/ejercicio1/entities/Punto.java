@@ -11,8 +11,19 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
 public class Punto extends Base{
 
 
+
+    @Column
+    private int x;
+
+    @Column
+    private int y;
+
+    public Punto(String name, int x, int y) {
+        super(name);
+        this.x = x;
+        this.y = y;
+    }
 }

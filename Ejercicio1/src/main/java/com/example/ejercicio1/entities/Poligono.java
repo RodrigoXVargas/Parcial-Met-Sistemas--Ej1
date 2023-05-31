@@ -1,14 +1,12 @@
 package com.example.ejercicio1.entities;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,6 +18,9 @@ import java.util.List;
 public class Poligono extends FiguraBasica {
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Lado> lados;
+    private List<Lado> lados = new ArrayList<>();
 
+    public Poligono(String name) {
+        super(name);
+    }
 }

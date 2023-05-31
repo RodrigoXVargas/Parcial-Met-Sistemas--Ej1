@@ -6,15 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "figurasbasicas")
-@NoArgsConstructor
 @Getter
 @Setter
 @AllArgsConstructor
 public class FiguraBasica extends Base{
-
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "figura_fk")
-    private Figura figura;
+    public FiguraBasica(String name) {
+        super(name);
+    }
 }
