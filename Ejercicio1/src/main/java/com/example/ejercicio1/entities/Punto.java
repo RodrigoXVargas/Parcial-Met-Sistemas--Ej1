@@ -15,10 +15,10 @@ public class Punto extends Base{
 
 
 
-    @Column
+    @Column(name = "coordenada_x")
     private int x;
 
-    @Column
+    @Column(name = "coordenada_y")
     private int y;
 
     public Punto(String name, int x, int y) {
