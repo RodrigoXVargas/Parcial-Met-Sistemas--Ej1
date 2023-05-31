@@ -15,6 +15,9 @@ import lombok.Setter;
 public class Ciudad extends Base {
 
     @Column
+    private String Nombre;
+
+    @Column
     private boolean esCapital;
 
     @ManyToOne(cascade = CascadeType.PERSIST)

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,6 +18,9 @@ import java.util.List;
 public class Provincia extends Base {
 
     @Column
+    private String Nombre;
+
+    @Column
     private boolean esCapital;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -24,10 +28,15 @@ public class Provincia extends Base {
     private Pais pais;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Pais> paisesLimitrofes;
+    private List<Pais> paisesLimitrofes = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Provincia> provinciaslimitrofes;
+    private List<Provincia> provinciaslimitrofes = new ArrayList<>();
 
 
+    public Provincia(String nombre, boolean esCapital, Pais pais) {
+        Nombre = nombre;
+        this.esCapital = esCapital;
+        this.pais = pais;
+    }
 }

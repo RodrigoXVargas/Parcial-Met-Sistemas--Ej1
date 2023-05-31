@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,6 +17,13 @@ import java.util.List;
 @AllArgsConstructor
 public class Continente extends Base{
 
+    @Column
+    private String Nombre;
+
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Continente> continenteslimitrofes;
+    private List<Continente> continenteslimitrofes = new ArrayList<>();
+
+    public Continente(String nombre) {
+        Nombre = nombre;
+    }
 }
